@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, OnDestroy, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-banner',
-  imports: [RouterOutlet, CommonModule],
+  imports: [CommonModule],
   templateUrl: './banner.html',
   styleUrl: './banner.css',
 })
