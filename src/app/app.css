@@ -1,0 +1,22 @@
+/* icon-grid.component.css */
+/* Tailwind is used for most styles; this file contains only custom overrides if needed */
+.group:hover .group-hover\:text-white {
+  color: white !important;
+}
+
+/* ensure the overlay scales properly */
+.group:hover .group-hover\:scale-\[4\] {
+  transform: scale(4);
+}
+
+/* smooth transitions for all interactive elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* optional: keep card heights consistent */
+.group {
+  min-height: 160px;
+}
