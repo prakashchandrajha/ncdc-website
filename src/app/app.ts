@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import {
@@ -12,6 +12,7 @@ import {
   faWater,
   type IconDefinition,
 } from '@fortawesome/free-solid-svg-icons';
+import * as L from 'leaflet';
 import { Header } from "./components/header/header";
 import { Banner } from "./components/banner/banner";
 import { FirstCards } from "./components/home/first-cards/first-cards";
@@ -29,9 +30,10 @@ interface ProfileItem {
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
-  // Replace these with the names + Font Awesome icons you want around the circle.
-  // `pos` keeps each item's absolute position on the ring.
+export class App implements AfterViewInit {
+  @ViewChild('map') mapRef!: ElementRef<HTMLDivElement>;
+  private map: L.Map | null = null;
+
   profileItems: ProfileItem[] = [
     { name: 'Loan Application', icon: faFileSignature, pos: 'left-[90px] -top-[8px]', color: 'text-blue-600' },
     { name: 'Finance & Financing', icon: faCoins, pos: 'right-[90px] -top-[8px]', color: 'text-green-600' },
@@ -43,4 +45,20 @@ export class App {
   ];
 
   centerBrand = { name: 'NCDC', img: '/ncdcBul.jpg' };
+
+  ngAfterViewInit(): void {
+    setTimeout(() => {
+      const el = this.mapRef.nativeElement;
+      if (!el || this.map) return;
+      try {
+        this.map = L.map(el).setView([20, 0], 2);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          maxZoom: 18,
+        }).addTo(this.map);
+      } catch (e) {
+        console.error('Leaflet init failed', e);
+      }
+    }, 0);
+  }
 }
