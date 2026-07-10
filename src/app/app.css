@@ -20,3 +20,20 @@
 .group {
   min-height: 160px;
 }
+
+/* rotating border for profile card container */
+.profileCard_container {
+  position: relative;
+}
+.profileCard_container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 4px dashed rgba(156, 163, 175, 0.5);
+  border-radius: 50%;
+  animation: spin 4s linear infinite;
+}
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

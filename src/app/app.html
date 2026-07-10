@@ -5,8 +5,8 @@
 
 
 
-<div class="relative h-full w-full flex items-center justify-center mt-10">
-  <div class="profileCard_container relative p-20 border-4 border-dashed rounded-full border-spacing-4 border-gray-400/50">
+<div class="relative h-full w-full flex items-center justify-center mt-10 mb-25">
+  <div class="profileCard_container relative p-20">
 
     @for (item of profileItems; track item.name) {
       <button class="profile_item absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 p-[4px] active:scale-95 hover:scale-95 transition-all duration-500" [ngClass]="item.pos">
@@ -19,7 +19,7 @@
 
     <button class="profile_item w-[400px] h-[400px] p-2 border-4 rounded-full hover:border-gray-400/50 cursor-pointer transition-all duration-500 z-0">
       <div class="w-full bg-white h-full flex flex-col items-center justify-center gap-4 p-4 rounded-full active:scale-95 hover:scale-95 object-cover transition-all duration-500">
-        <fa-icon [icon]="centerBrand.icon" class="text-9xl text-[#1E3A5F]"></fa-icon>
+        <img [src]="centerBrand.img" alt="{{ centerBrand.name }}" class="w-40 h-40 object-cover rounded-full">
         <span class="text-2xl font-semibold text-gray-800">{{ centerBrand.name }}</span>
       </div>
     </button>

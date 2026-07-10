@@ -7,7 +7,6 @@ import {
   faCoins,
   faFileSignature,
   faHandsHelping,
-  faLandmark,
   faPercent,
   faProjectDiagram,
   faWater,
@@ -42,5 +41,5 @@ export class App {
     { name: 'Rate (Floating)', icon: faWater, pos: 'right-[40%] -bottom-8' },
   ];
 
-  centerBrand = { name: 'NCDC', icon: faLandmark };
+  centerBrand = { name: 'NCDC', img: '/ncdcBul.jpg' };
 }
