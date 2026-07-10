@@ -6,21 +6,21 @@
 
 
 <div class="relative h-full w-full flex items-center justify-center mt-10">
-  <div class="profileCard_container relative p-10 border-2 border-dashed rounded-full border-spacing-4 border-gray-400/50">
+  <div class="profileCard_container relative p-20 border-4 border-dashed rounded-full border-spacing-4 border-gray-400/50">
 
     @for (item of profileItems; track item.name) {
-      <button class="profile_item absolute rounded-full bg-cover cursor-pointer border border-gray-400/50 p-[2px] active:scale-95 hover:scale-95 transition-all duration-500" [ngClass]="item.pos">
-        <span class="block w-[40px] h-[40px] transition-all duration-500 rounded-full z-[2] bg-white p-1 overflow-hidden flex items-center justify-center">
-          <fa-icon [icon]="item.icon" class="text-gray-700 text-xs"></fa-icon>
+      <button class="profile_item absolute rounded-full bg-cover cursor-pointer border-2 border-gray-400/50 p-[4px] active:scale-95 hover:scale-95 transition-all duration-500" [ngClass]="item.pos">
+        <span class="block w-[80px] h-[80px] transition-all duration-500 rounded-full z-[2] bg-white p-2 overflow-hidden flex items-center justify-center">
+          <fa-icon [icon]="item.icon" class="text-gray-700 text-base"></fa-icon>
         </span>
-        <span class="absolute left-1/2 top-full -translate-x-1/2 mt-1 whitespace-nowrap rounded bg-white/85 px-1.5 py-0.5 text-[10px] font-medium text-gray-700 shadow-sm">{{ item.name }}</span>
+        <span class="absolute left-1/2 top-full -translate-x-1/2 mt-2 whitespace-nowrap rounded bg-white/85 px-3 py-1 text-[20px] font-medium text-gray-700 shadow-sm">{{ item.name }}</span>
       </button>
     }
 
-    <button class="profile_item w-[200px] h-[200px] p-1 border-2 rounded-full hover:border-gray-400/50 cursor-pointer transition-all duration-500 z-0">
-      <div class="w-full bg-white h-full flex flex-col items-center justify-center gap-2 p-2 rounded-full active:scale-95 hover:scale-95 object-cover transition-all duration-500">
-        <fa-icon [icon]="centerBrand.icon" class="text-5xl text-[#1E3A5F]"></fa-icon>
-        <span class="text-sm font-semibold text-gray-800">{{ centerBrand.name }}</span>
+    <button class="profile_item w-[400px] h-[400px] p-2 border-4 rounded-full hover:border-gray-400/50 cursor-pointer transition-all duration-500 z-0">
+      <div class="w-full bg-white h-full flex flex-col items-center justify-center gap-4 p-4 rounded-full active:scale-95 hover:scale-95 object-cover transition-all duration-500">
+        <fa-icon [icon]="centerBrand.icon" class="text-9xl text-[#1E3A5F]"></fa-icon>
+        <span class="text-2xl font-semibold text-gray-800">{{ centerBrand.name }}</span>
       </div>
     </button>
   </div>
