@@ -20,6 +20,7 @@ interface ProfileItem {
   name: string;
   icon: IconDefinition;
   pos: string;
+  color: string;
 }
 
 @Component({
@@ -32,13 +33,13 @@ export class App {
   // Replace these with the names + Font Awesome icons you want around the circle.
   // `pos` keeps each item's absolute position on the ring.
   profileItems: ProfileItem[] = [
-    { name: 'Loan Application', icon: faFileSignature, pos: 'left-[90px] -top-[8px]' },
-    { name: 'Finance & Financing', icon: faCoins, pos: 'right-[90px] -top-[8px]' },
-    { name: 'Activities Assisted', icon: faHandsHelping, pos: '-left-8 top-40' },
-    { name: 'Pattern of Assistance', icon: faProjectDiagram, pos: '-right-8 top-40' },
-    { name: 'Programme 2024-25', icon: faCalendarAlt, pos: 'bottom-16 -left-0' },
-    { name: 'Rate (Fixed)', icon: faPercent, pos: 'bottom-16 -right-0' },
-    { name: 'Rate (Floating)', icon: faWater, pos: 'right-[40%] -bottom-8' },
+    { name: 'Loan Application', icon: faFileSignature, pos: 'left-[90px] -top-[8px]', color: 'text-blue-600' },
+    { name: 'Finance & Financing', icon: faCoins, pos: 'right-[90px] -top-[8px]', color: 'text-green-600' },
+    { name: 'Activities Assisted', icon: faHandsHelping, pos: '-left-8 top-40', color: 'text-purple-600' },
+    { name: 'Pattern of Assistance', icon: faProjectDiagram, pos: '-right-8 top-40', color: 'text-orange-500' },
+    { name: 'Programme 2024-25', icon: faCalendarAlt, pos: 'bottom-16 -left-0', color: 'text-red-500' },
+    { name: 'Rate (Fixed)', icon: faPercent, pos: 'bottom-16 -right-0', color: 'text-teal-600' },
+    { name: 'Rate (Floating)', icon: faWater, pos: 'right-[40%] -bottom-8', color: 'text-indigo-500' },
   ];
 
   centerBrand = { name: 'NCDC', img: '/ncdcBul.jpg' };
